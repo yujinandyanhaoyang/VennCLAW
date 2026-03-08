@@ -1,0 +1,5 @@
+# 任务追踪日志文件（自动生成）
+# 格式：JSONL (每行一个 JSON 对象)
+# 
+# 示例：
+# {"id": "feat-abc123", "description": "添加用户认证功能", "agent_type": "codex", "status": "running", ...}

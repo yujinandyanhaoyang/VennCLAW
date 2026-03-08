@@ -1,0 +1,21 @@
+# Cron 定时任务配置
+tasks:
+  monitor_agents:
+    schedule: "*/10 * * * *"  # 每 10 分钟检查一次
+    script: "scripts/monitor-agents.sh"
+    description: "监控所有 Agent 运行状态"
+  
+  cleanup_old_worktrees:
+    schedule: "0 2 * * *"     # 每天凌晨 2 点
+    script: "scripts/cleanup-old-tasks.sh"
+    description: "清理旧的 worktree 和任务记录"
+  
+  auto_discover_tasks:
+    schedule: "0 */4 * * *"   # 每 4 小时扫描一次
+    script: "scripts/auto-discover.sh"
+    description: "主动发现潜在开发任务"
+  
+  backup_business_context:
+    schedule: "0 0 * * *"     # 每天午夜
+    script: "scripts/backup-context.sh"
+    description: "备份业务上下文数据"

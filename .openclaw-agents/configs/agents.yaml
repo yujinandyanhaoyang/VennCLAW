@@ -1,0 +1,31 @@
+# Agent 配置
+agents:
+  codex:
+    name: "Codex (主力)"
+    model: "gpt-5.3-codex"
+    cost_per_hour: 90
+    priority: high
+    best_for:
+      - "后端逻辑"
+      - "复杂 bug 修复"
+      - "多文件重构"
+      - "跨代码库推理"
+  
+  claude-code:
+    name: "Claude Code (快速)"
+    model: "claude-opus-4.5"
+    cost_per_hour: 100
+    priority: medium
+    best_for:
+      - "前端开发"
+      - "git 操作"
+      - "快速迭代"
+  
+  gemini:
+    name: "Gemini (设计)"
+    model: "gemini-ultra"
+    cost_per_hour: 15
+    priority: low
+    best_for:
+      - "UI 设计"
+      - "视觉规范生成"
