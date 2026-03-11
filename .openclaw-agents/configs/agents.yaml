@@ -1,31 +1,87 @@
-# Agent 配置
-agents:
-  codex:
-    name: "Codex (主力)"
-    model: "gpt-5.3-codex"
-    cost_per_hour: 90
-    priority: high
-    best_for:
-      - "后端逻辑"
-      - "复杂 bug 修复"
-      - "多文件重构"
-      - "跨代码库推理"
-  
-  claude-code:
-    name: "Claude Code (快速)"
-    model: "claude-opus-4.5"
-    cost_per_hour: 100
-    priority: medium
-    best_for:
-      - "前端开发"
-      - "git 操作"
-      - "快速迭代"
-  
-  gemini:
-    name: "Gemini (设计)"
-    model: "gemini-ultra"
-    cost_per_hour: 15
-    priority: low
-    best_for:
-      - "UI 设计"
-      - "视觉规范生成"
+# VennCLAW Agent 配置
+# 最后更新：2026-03-10 22:50
+# 团队结构：技术主管 + Advisor + Coordinator + 博士
+
+# ==================== 管理层 ====================
+tech_lead:
+  name: "技术主管"
+  model: "bailian/qwen3.5-plus"
+  role: "tech_lead"
+  priority: critical
+  responsibilities:
+    - "团队管理"
+    - "技术指导"
+    - "召开会议"
+    - "进度跟踪"
+  notes: "由当前 AI 助理（我）担任"
+
+# ==================== 监督层 ====================
+advisor:
+  name: "Advisor (顾问)"
+  model: "bailian/qwen3-max-2026-01-23"
+  role: "advisor"
+  priority: critical
+  responsibilities:
+    - "审查监督"
+    - "风险评估"
+    - "质量把控"
+    - "提供不同视角"
+  working_style:
+    - "批判性思维"
+    - "敢于质疑"
+    - "建设性批评"
+
+# ==================== 执行层 ====================
+coordinator:
+  name: "Coordinator (协调员)"
+  model: "bailian/qwen3-coder-plus"
+  role: "executor"
+  priority: high
+  responsibilities:
+    - "编码工作"
+    - "任务执行"
+    - "代码审查"
+  best_for:
+    - "后端逻辑"
+    - "复杂 bug 修复"
+    - "多文件重构"
+
+phd_writer:
+  name: "PhD Writer (博士)"
+  model: "bailian/qwen3.5-plus"
+  role: "writer"
+  priority: high
+  responsibilities:
+    - "论文撰写"
+    - "审稿工作"
+    - "文献综述"
+    - "学术规范审查"
+  best_for:
+    - "学术写作"
+    - "论文结构"
+    - "参考文献管理"
+
+# ==================== 会议机制 ====================
+meeting:
+  frequency: "按需召开"
+  participants:
+    - "技术主管"
+    - "Advisor"
+    - "Coordinator"
+    - "博士"
+  decision_rule: "四人一致同意"
+  milestones:
+    - date: "2026-03-14"
+      deliverable: "系统代码 + 论文初稿"
+      status: "pending"
+
+# ==================== 项目信息 ====================
+project:
+  name: "ACPs 多 Agent 协作系统"
+  level: "本科毕业设计"
+  target:
+    - "完整的系统代码"
+    - "学术规范的论文"
+  deadline:
+    draft: "2026-03-14"
+    final: "TBD"
